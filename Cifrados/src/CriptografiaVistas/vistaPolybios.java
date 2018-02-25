@@ -1,7 +1,7 @@
 package CriptografiaVistas;
 
+
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -9,7 +9,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JTextField;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
@@ -60,7 +59,7 @@ public class vistaPolybios extends JFrame {
 				//analizamos la respuesta
 				switch(seleccion) {
 				case JFileChooser.APPROVE_OPTION:
-					//seleccionó abrir
+					//seleccionÃ³ abrir
 					File archivo = explorador.getSelectedFile();
 					if (archivo.isFile() && archivo != null) {
 						Dir.setText(archivo.getAbsolutePath());
@@ -115,7 +114,7 @@ public class vistaPolybios extends JFrame {
 					btnCifrar.setEnabled(false);
 			    	btnDescifrar.setEnabled(false);
 				} else {
-					JOptionPane.showMessageDialog(null, "Por favor ingrese un archivo de texto valido (*C.txt)"));
+					JOptionPane.showMessageDialog(null, "Por favor ingrese un archivo de texto valido (*C.txt)");
 					Dir.setText("");
 				}
 			}
