@@ -13,7 +13,7 @@ public class Escitala {
 	static int val = 0;
 	static char [][] matriz;
 	static char [][] matrizT;
-		
+	
 	public double largoMensaje(String mensaje){
 		int cadena;
 		double num = 0;
@@ -21,11 +21,8 @@ public class Escitala {
 		try {
 			f = new FileReader(mensaje);
 			cadena = f.read();
-			
 	        while (cadena != -1) {
-	        	//if (cadena != 10) {
-	        		num += 1;
-				//}
+	        	num += 1;
 				cadena = f.read();
 			}
 	        f.close();
@@ -62,20 +59,16 @@ public class Escitala {
 	public static void transpuesta(char [][] mat) {
 		if (val != 0) {
 			matrizT = new char [largo][caras];
-			System.out.println("matttt = " + mat[0].length);
 			for (int i = 0; i < mat[0].length; i++) {
 				for (int j = 0; j < caras; j++) {
 					matrizT[i][j] = mat[j][i];
-					System.out.println("i = " + i + " j = " + j);
 				}
 			}
 		}else {
 			matrizT = new char [caras][largo];
-			System.out.println("mat = " + mat.length);
 			for (int i = 0; i < mat.length; i++) {
 				for (int j = 0; j < caras; j++) {
 					matrizT[j][i] = mat[i][j];
-					System.out.println("i = " + i + " j = " + j);
 				}
 			}
 		}
@@ -87,11 +80,8 @@ public class Escitala {
 		FileWriter fichero = null;
         PrintWriter pw = null;
 		msj = dir;
-		System.out.println("dir "+msj);
 		caras = numCaras;
-		System.out.println("caras "+caras);
 		largo = (int)Math.ceil(largoMensaje(msj) / numCaras);
-		System.out.println("largo "+largo);
 		llenaMatriz(largo,caras,msj);
 		transpuesta(matriz);
 		try {
@@ -115,11 +105,8 @@ public class Escitala {
 		FileWriter fichero = null;
         PrintWriter pw = null;
 		msj = dir;
-		System.out.println("dir "+msj);
 		caras = numCaras;
-		System.out.println("caras "+caras);
 		largo = (int)Math.ceil(largoMensaje(msj) / numCaras);
-		System.out.println("largo "+largo);
 		llenaMatriz(caras,largo,msj);
 		transpuesta(matriz);
 		try {
@@ -130,8 +117,6 @@ public class Escitala {
 					pw.write(matrizT[i][j]);
 				}
 			}
-            boolean res = fichero.equals(fichero);
-            System.out.println("res = " + res);
             fichero.close();
             matriz = null;
             matrizT = null;
