@@ -1,6 +1,5 @@
 package CriptografiaMetodos;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,9 +14,9 @@ public class Escitala {
 	static char [][] matriz;
 	static char [][] matrizT;
 		
-	public int largoMensaje(String mensaje){
+	public double largoMensaje(String mensaje){
 		int cadena;
-		int num = 0;
+		double num = 0;
 		FileReader f;
 		try {
 			f = new FileReader(mensaje);
@@ -119,16 +118,10 @@ public class Escitala {
 		System.out.println("dir "+msj);
 		caras = numCaras;
 		System.out.println("caras "+caras);
-		largo = largoMensaje(msj) / numCaras;
+		largo = (int)Math.ceil(largoMensaje(msj) / numCaras);
 		System.out.println("largo "+largo);
 		llenaMatriz(caras,largo,msj);
 		transpuesta(matriz);
-//		for (int i = 0; i < matrizT.length; i++) {
-//			for (int j = 0; j < caras; j++) {
-//				System.out.print(matrizT[i][j]);
-//			}
-//			System.out.println();
-//		}
 		try {
 			fichero = new FileWriter(msj.substring(0, msj.length()-5)+"D.txt");
             pw = new PrintWriter(fichero);
