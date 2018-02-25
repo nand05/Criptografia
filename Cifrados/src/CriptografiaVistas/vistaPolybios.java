@@ -1,6 +1,7 @@
 package CriptografiaVistas;
 
-import java.awt.EventQueue;
+
+import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -58,7 +59,7 @@ public class vistaPolybios extends JFrame {
 				//analizamos la respuesta
 				switch(seleccion) {
 				case JFileChooser.APPROVE_OPTION:
-					//seleccionó abrir
+					//seleccionÃ³ abrir
 					File archivo = explorador.getSelectedFile();
 					if (archivo.isFile() && archivo != null) {
 						Dir.setText(archivo.getAbsolutePath());
