@@ -1,7 +1,8 @@
 package CriptografiaVistas;
 
 
-import java.awt.BorderLayout;
+
+import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,15 +16,19 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.awt.event.ActionEvent;
 
+import CriptografiaMetodos.*;
+
 public class vistaPolybios extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField Dir;
-
+	private Polybios polybios = new Polybios();
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) {	
+		Polybios p = new Polybios();
+		p.llenaMatriz();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -91,6 +96,7 @@ public class vistaPolybios extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				File f = new File(Dir.getText());
 				if (f.getAbsolutePath().endsWith(".txt")) {
+					
 					//aqui va el cigo de cifrado de polybios
 					Dir.setText("");
 					btnCifrar.setEnabled(false);
